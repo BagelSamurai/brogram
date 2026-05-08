@@ -25,7 +25,160 @@ main {
   gap: 1.5rem;
 }
 
-/* Day card grid */
+/* ── Workout detail panel ───────────────────────────── */
+
+.workout-detail {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.workout-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.workout-detail-day {
+  display: block;
+  font-size: 0.875rem;
+  color: #388bfd;
+  margin-bottom: 0.25rem;
+}
+
+.workout-detail-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.workout-detail-icon {
+  font-size: 1.5rem;
+}
+
+.exercise-section {
+  margin-bottom: 1.25rem;
+}
+
+.exercise-table-header {
+  display: grid;
+  grid-template-columns: 1fr 70px 70px 140px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px solid #21262d;
+}
+
+.exercise-row {
+  display: grid;
+  grid-template-columns: 1fr 70px 70px 140px;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #c9d1d9;
+  border-radius: 4px;
+}
+
+.exercise-row:hover {
+  background: #161b22;
+}
+
+.exercise-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exercise-info-btn {
+  opacity: 0;
+  background: none;
+  border: 1px solid #388bfd;
+  border-radius: 50%;
+  color: #388bfd;
+  width: 18px;
+  height: 18px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+  font-family: system-ui, sans-serif;
+}
+
+.exercise-row:hover .exercise-info-btn {
+  opacity: 1;
+}
+
+.weight-input {
+  width: 120px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  color: #8b949e;
+  padding: 0.3rem 0.5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+}
+
+.weight-input:focus {
+  outline: none;
+  border-color: #388bfd;
+  color: #fff;
+}
+
+.weight-input:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.workout-detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.workout-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.workout-btn--exit {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.workout-btn--exit:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.workout-btn--complete {
+  background: #21262d;
+  border: 2px solid #30363d;
+  color: #8b949e;
+}
+
+.workout-btn--complete:hover {
+  background: #2d333b;
+  color: #fff;
+}
+
+/* ── Day card grid ──────────────────────────────────── */
+
 .workout-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -69,6 +222,11 @@ main {
   border-color: #388bfd;
 }
 
+.day-card--completed {
+  border-color: #238636;
+  background: #1a2f1a;
+}
+
 .day-card-header {
   display: flex;
   justify-content: space-between;
@@ -89,7 +247,8 @@ main {
   font-weight: 700;
 }
 
-/* Modal */
+/* ── Exercise description modal ─────────────────────── */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -102,31 +261,7 @@ main {
 }
 
 .modal-content {
-  max-width: 540px;
+  max-width: 500px;
   width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
   background: #fff;
-}
-
-.modal-content h6 {
-  font-size: 0.6rem;
-  margin: 0.75rem 0 0.25rem;
-}
-
-/* Exercise buttons inside modal tables */
-.exercise-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: "Press Start 2P", cursive;
-  font-size: 0.5rem;
-  color: #209cee;
-  text-align: left;
-  padding: 0;
-  line-height: 1.5;
-}
-
-.exercise-btn:hover {
-  text-decoration: underline;
 }
