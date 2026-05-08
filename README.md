@@ -1,74 +1,74 @@
-# React + TypeScript + Vite
+# The Brogram
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A 30-day gym workout tracker built with React and TypeScript. Follow a structured Bro Split program, log your max weights, and track your progress day by day.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **30-day Bro Split program** — Push, Pull, and Legs days cycling over 30 sessions
+- **Day progression** — Days unlock sequentially as you complete them
+- **Weight tracking** — Log your max weight per exercise; inputs are saved to `localStorage`
+- **Exercise descriptions** — Hover any exercise and click `?` to view a description and proper form cues
+- **Dark theme** — Full dark mode throughout
+- **Responsive** — Works on desktop, tablet, and mobile
 
-## React Compiler
+## The Program
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The workout plan uses a **Bro Split** rotation:
 
-## Expanding the ESLint configuration
+> Push → Pull → Legs → Repeat
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Each day includes a warmup and a main workout. Warmup exercises are bodyweight only (N/A weight). Workout exercises have editable weight fields so you can track your working weights over time.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### The Rules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Rest** — Take rest days where necessary
+2. **Reps** — Every rep follows a **2-2-2 tempo** (2 seconds down, 2 second pause, 2 seconds up)
+3. **Weight** — Use the maximum weight you can lift with good form. Sets 1 and 2 should be at 75% and 85% of your working weight.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Other commands
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm build    # type-check and build for production
+pnpm preview  # preview the production build
+pnpm lint     # run ESLint
 ```
-# brogram
+
+## Tech Stack
+
+- [React 19](https://react.dev)
+- [TypeScript 6](https://www.typescriptlang.org)
+- [Vite 8](https://vite.dev)
+- [NES.css](https://nostalgic-css.github.io/NES.css/) — pixel-art CSS framework for the info sections
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Layout.tsx        # Header + Footer wrapper
+│   ├── Header.tsx        # Site title
+│   ├── Footer.tsx        # Attribution
+│   ├── Hero.tsx          # Program intro sections
+│   ├── Grid.tsx          # Day card grid + state management
+│   ├── WorkoutCard.tsx   # Compact day button (locked / active / completed)
+│   ├── WorkoutDetail.tsx # Inline workout panel with weight inputs
+│   └── Modal.tsx         # Exercise description overlay
+├── types/
+│   └── types.ts          # Exercise, WorkoutProgram, WorkoutDescription types
+└── utils/
+    ├── workoutProgram.ts     # 30-day workout data
+    └── workoutDescription.ts # Exercise form cues
+```
+
+## Built by
+
+Rohan Chaudhary — styled with [NES.css](https://nostalgic-css.github.io/NES.css/)
