@@ -2,13 +2,74 @@
   box-sizing: border-box;
 }
 
+/* ── Global dark theme ──────────────────────────────── */
+
 body {
   background: #0d1117;
+  color: #e6edf3;
 }
 
+/* ── NES.css dark overrides ─────────────────────────── */
+
 .nes-container {
-  background: #fff;
+  background-color: #161b22 !important;
+  color: #e6edf3;
 }
+
+.nes-container.with-title > .title {
+  background-color: #161b22 !important;
+  color: #8b949e;
+}
+
+.nes-container h1,
+.nes-container h2,
+.nes-container h3,
+.nes-container h4,
+.nes-container h5,
+.nes-container h6,
+.nes-container p,
+.nes-container li,
+.nes-container b,
+.nes-container i {
+  color: #e6edf3;
+}
+
+.nes-container small {
+  color: #8b949e;
+}
+
+.nes-container a {
+  color: #388bfd;
+}
+
+.nes-container abbr {
+  color: #e6edf3;
+  border-bottom-color: #8b949e;
+}
+
+/* List bullet markers */
+.nes-list li::before {
+  color: #e6edf3 !important;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
 
 #root {
   max-width: 1200px;
@@ -62,11 +123,14 @@ main {
 
 .exercise-section {
   margin-bottom: 1.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .exercise-table-header {
   display: grid;
   grid-template-columns: 1fr 70px 70px 140px;
+  min-width: 380px;
   padding: 0.4rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
@@ -77,6 +141,7 @@ main {
 .exercise-row {
   display: grid;
   grid-template-columns: 1fr 70px 70px 140px;
+  min-width: 380px;
   padding: 0.5rem 0.75rem;
   align-items: center;
   font-size: 0.875rem;
@@ -185,18 +250,6 @@ main {
   gap: 0.75rem;
 }
 
-@media (max-width: 768px) {
-  .workout-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .workout-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .day-card {
   background: #161b22;
   border: 2px solid #30363d;
@@ -247,21 +300,48 @@ main {
   font-weight: 700;
 }
 
-/* ── Exercise description modal ─────────────────────── */
+/* ── Responsive ─────────────────────────────────────── */
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  padding: 1rem;
+@media (max-width: 900px) {
+  .workout-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.modal-content {
-  max-width: 500px;
-  width: 100%;
-  background: #fff;
+@media (max-width: 700px) {
+  .workout-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .workout-detail {
+    padding: 1rem;
+  }
+
+  .workout-detail-title {
+    font-size: 1.1rem;
+  }
+
+  .workout-detail-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .workout-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .day-card {
+    padding: 0.75rem 0.625rem;
+  }
+
+  .day-card-type {
+    font-size: 0.875rem;
+  }
 }
