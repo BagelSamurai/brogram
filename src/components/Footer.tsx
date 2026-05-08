@@ -1,14 +1,11 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="nes-container is-centered">
       <p>
-        Built by{" "}
-        <a href="" target="_blank">
-          Rohan Chaudhary
-        </a>
+        Built by Rohan Chaudhary
         <br />
         Styled with{" "}
-        <a href="https://nostalgic-css.github.io/NES.css/" target="_blank">
+        <a href="https://nostalgic-css.github.io/NES.css/" target="_blank" rel="noreferrer">
           NES.css
         </a>
       </p>

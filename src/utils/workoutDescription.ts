@@ -7,7 +7,7 @@ export const exerciseDescriptions: WorkoutDescription = {
     "Begin in a high plank position. Keep your arms straight and only move your shoulder blades, bringing them together and apart in a controlled manner, as you lower your body towards the ground, and then raise it back up. Hold a kneeling position if the plank is too challenging.",
   "Wall bodyweight rows":
     "Stand a foot away from a wall, lean back, and with your elbows by your sides and hands pointing forward of your body, press your body off the wall using your elbows while engaging your back muscles.",
-  "leaning rear delt holds":
+  "Leaning rear delt holds":
     "Stand with your back against a wall, elbows at shoulder level, hands to the sky, and thumbs facing your ears. Engage your rear delts to press your back off the wall using your elbows.",
   "Scapula pull ups":
     "Hang from a pull-up bar or lat pull down machine with straight arms. Without bending your elbows, engage your shoulder blades to lift your body slightly, then release back to hanging position.",
