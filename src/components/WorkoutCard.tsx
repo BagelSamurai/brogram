@@ -1,66 +1,38 @@
-import type { Exercise } from "../types/types";
+const DAY_LABELS = ["Push", "Pull", "Legs"] as const;
 
 type WorkoutCardProps = {
   day: number;
-  warmup: Exercise[];
-  workout: Exercise[];
-  onExerciseClick: (name: string) => void;
+  isUnlocked: boolean;
+  isCompleted: boolean;
+  onDayClick: (day: number) => void;
 };
 
-type ExerciseTableProps = {
-  exercises: Exercise[];
-  onExerciseClick: (name: string) => void;
-};
-
-const DAY_LABELS = ["Push", "Pull", "Legs"] as const;
-
-function ExerciseTable({ exercises, onExerciseClick }: ExerciseTableProps) {
-  return (
-    <table className="nes-table is-bordered" style={{ width: "100%" }}>
-      <thead>
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-          <th>Reps</th>
-        </tr>
-      </thead>
-      <tbody>
-        {exercises.map((ex) => (
-          <tr key={ex.name}>
-            <td>
-              <button
-                className="exercise-btn"
-                onClick={() => onExerciseClick(ex.name)}
-              >
-                {ex.name}
-              </button>
-            </td>
-            <td>{ex.sets}</td>
-            <td>{ex.reps}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
+function dayIcon(isUnlocked: boolean, isCompleted: boolean): string {
+  if (isCompleted) return "✅";
+  if (isUnlocked) return "🏋️";
+  return "🔒";
 }
 
 export default function WorkoutCard({
   day,
-  warmup,
-  workout,
-  onExerciseClick,
+  isUnlocked,
+  isCompleted,
+  onDayClick,
 }: WorkoutCardProps) {
   const label = DAY_LABELS[day % 3];
 
   return (
-    <section className="nes-container with-title workout-card">
-      <p className="title">
-        Day {day + 1} — {label}
-      </p>
-      <h6>Warmup</h6>
-      <ExerciseTable exercises={warmup} onExerciseClick={onExerciseClick} />
-      <h6>Workout</h6>
-      <ExerciseTable exercises={workout} onExerciseClick={onExerciseClick} />
-    </section>
+    <button
+      className={`day-card${isUnlocked ? " day-card--active" : ""}${isCompleted ? " day-card--completed" : ""}`}
+      onClick={() => onDayClick(day)}
+    >
+      <div className="day-card-header">
+        <span className="day-card-label">
+          Day {String(day + 1).padStart(2, "0")}
+        </span>
+        <span className="day-card-icon">{dayIcon(isUnlocked, isCompleted)}</span>
+      </div>
+      <span className="day-card-type">{label}</span>
+    </button>
   );
 }
