@@ -60,7 +60,7 @@ export const workoutProgram: WorkoutProgram = {
   4: {
     // Pull
     warmup: [
-      { name: "leaning rear delt holds", sets: 2, reps: 20 },
+      { name: "Leaning rear delt holds", sets: 2, reps: 20 },
       { name: "Scapula pull ups", sets: 2, reps: 20 },
     ],
     workout: [
@@ -144,7 +144,7 @@ export const workoutProgram: WorkoutProgram = {
   10: {
     // Pull
     warmup: [
-      { name: "leaning rear delt holds", sets: 2, reps: 20 },
+      { name: "Leaning rear delt holds", sets: 2, reps: 20 },
       { name: "Wall bodyweight rows", sets: 2, reps: 20 },
     ],
     workout: [
@@ -228,7 +228,7 @@ export const workoutProgram: WorkoutProgram = {
   16: {
     // Pull
     warmup: [
-      { name: "leaning rear delt holds", sets: 2, reps: 20 },
+      { name: "Leaning rear delt holds", sets: 2, reps: 20 },
       { name: "Scapula pull ups", sets: 2, reps: 20 },
     ],
     workout: [
@@ -312,7 +312,7 @@ export const workoutProgram: WorkoutProgram = {
   22: {
     // Pull
     warmup: [
-      { name: "leaning rear delt holds", sets: 2, reps: 20 },
+      { name: "Leaning rear delt holds", sets: 2, reps: 20 },
       { name: "Wall bodyweight rows", sets: 2, reps: 20 },
     ],
     workout: [
@@ -327,7 +327,7 @@ export const workoutProgram: WorkoutProgram = {
     // Legs
     warmup: [
       { name: "Bodyweight RDLs", sets: 2, reps: 30 },
-      { name: "Bodyweight  squats", sets: 2, reps: 20 },
+      { name: "Bodyweight squats", sets: 2, reps: 20 },
     ],
     workout: [
       { name: "Romanian deadlifts", sets: 3, reps: 10 },
@@ -396,7 +396,7 @@ export const workoutProgram: WorkoutProgram = {
   28: {
     // Pull
     warmup: [
-      { name: "leaning rear delt holds", sets: 2, reps: 20 },
+      { name: "Leaning rear delt holds", sets: 2, reps: 20 },
       { name: "Scapula pull ups", sets: 2, reps: 20 },
     ],
     workout: [
@@ -418,7 +418,7 @@ export const workoutProgram: WorkoutProgram = {
       { name: "Bulgarian split squat", sets: 3, reps: 10 },
       { name: "Leg extension", sets: 3, reps: 15 },
       { name: "Hip thrust", sets: 3, reps: 12 },
-      { name: "Leg extension", sets: 3, reps: 15 },
+      { name: "Hamstring curl", sets: 3, reps: 15 },
     ],
   },
 };

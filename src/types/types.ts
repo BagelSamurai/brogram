@@ -1,4 +1,4 @@
-export type Set = {
+export type Exercise = {
   name: string;
   sets: number;
   reps: number;
@@ -6,8 +6,8 @@ export type Set = {
 
 export type WorkoutProgram = {
   [day: number]: {
-    warmup: Set[];
-    workout: Set[];
+    warmup: Exercise[];
+    workout: Exercise[];
   };
 };
 
