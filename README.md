@@ -2,6 +2,10 @@
 
 A 30-day gym workout tracker built with React and TypeScript. Follow a structured Bro Split program, log your max weights, and track your progress day by day.
 
+**Live demo → [brogram-rc.netlify.app](https://brogram-rc.netlify.app)**
+
+![The Brogram](./docs/screenshot.png)
+
 ## Features
 
 - **30-day Bro Split program** — Push, Pull, and Legs days cycling over 30 sessions
