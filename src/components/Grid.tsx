@@ -4,25 +4,25 @@ import WorkoutCard from "./WorkoutCard";
 import Modal from "./Modal";
 
 export default function Grid() {
-  const [selectedExercise, setSelectedExercise] = useState<string | null>(null);
+  const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   return (
     <>
       <div className="workout-grid">
-        {Object.entries(workoutProgram).map(([day, data]) => (
+        {Object.keys(workoutProgram).map((day) => (
           <WorkoutCard
             key={day}
             day={Number(day)}
-            warmup={data.warmup}
-            workout={data.workout}
-            onExerciseClick={setSelectedExercise}
+            onDayClick={setSelectedDay}
           />
         ))}
       </div>
-      {selectedExercise && (
+      {selectedDay !== null && (
         <Modal
-          exercise={selectedExercise}
-          onClose={() => setSelectedExercise(null)}
+          day={selectedDay}
+          warmup={workoutProgram[selectedDay].warmup}
+          workout={workoutProgram[selectedDay].workout}
+          onClose={() => setSelectedDay(null)}
         />
       )}
     </>
